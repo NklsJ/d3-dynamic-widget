@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: #ECECEC;
+    font-size: 10px;
+}
+
+p,
+input,
+label,
+span,
+button{
+    font-size: 1.4em;
+}
+text{
+    font-size: 4.0em;
+}
+
+p{
+    margin-bottom: 15px;
+}
+
+table td > p{
+    margin: 0px;
+}
+
+button{
+    padding: 7px 15px;
+}
+
+input[type="text"]{
+    margin: 0px 5px 5px 0px;
+}
+
+.row-margin{
+    margin-bottom: 30px;
+}

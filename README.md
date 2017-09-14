@@ -2,27 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
-## Development server
+## What it does?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You can use datepicker fields to filter mock data and present it in a dynamic d3 widget.
 
-## Code scaffolding
+Mock data consists of JSON array of `Event` objects. ( Example `{'id': 1, 'date':  '2017-02-17', 'valueSelected': 0}` ) 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Widget calculates the amount of all Events on a requested timespan and compares that value to the number of Events that have `'valueSelected': 1`.
 
-## Build
+## Requirements
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+- Angular CLI
+- Node.js
+- npm
 
-## Running unit tests
+## Installation & running the demo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Download and install Node.js and npm https://docs.npmjs.com/getting-started/installing-node
 
-## Running end-to-end tests
+Download and install angular-cli https://cli.angular.io/
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Clone this Github repo to your own computer.
 
-## Further help
+cd into the project folder.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `npm install`
+
+Run `ng serve --open` OR run `npm start` and navigate to http://localhost:4200/

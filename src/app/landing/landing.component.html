@@ -1,27 +1,25 @@
 <div class="container">
 
-    <div class="row">
+    <div class="row row-margin">
         <div class="col-xs-12">
-            <p>*note: use dates between 2017-01-01 and 2017-12-31, all mock data events are between those dates.</p>
-            <label>Start date</label>
-            <input id="datepicker-start" type="text" />
-
-            <label>End date</label>
-            <input id="datepicker-end" type="text" />
-
+            <input id="datepicker-start" type="text" placeholder="Start date"/>
+            <input id="datepicker-end" type="text" placeholder="End date"/>    
             <button (click)="refreshWidget()">Search</button> 
 
+            <p>*note: use dates between 2017-01-01 and 2017-12-31, all mock data events are between those dates.</p>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row row-margin">
 
         <ng-container *ngFor="let widget of widgets">
-            <div class="col-xs-12 col-md-4">
+
+            <div class="col-xs-12 col-md-3">
 
                 <app-widget [widget]="widget"></app-widget>
 
             </div>
+
         </ng-container>
 
     </div>

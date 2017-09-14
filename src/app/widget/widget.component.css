@@ -2,11 +2,33 @@ table{
     width: 100%;
 }
 table tr td:nth-of-type(1){
-    width: 33%;
+    width: 70%;
 }
 table tr td:nth-of-type(2){
-    width: 33%;
+    width: 30%;
+    text-align: right;
 }
-table tr td:nth-of-type(3){
-    width: 34%;
+
+.graph-element-div{
+    text-align: center;
+    padding: 15px 15px 30px;
+}
+
+.widget-wrapper{
+    background: #fff;
+    border-radius: 7px;
+    padding: 15px 15px 1px;
+}
+
+.current-situation-div,
+.target-situation-div{
+    margin-bottom: 15px;
+}
+
+.current-situation-div .padding-row td{
+    padding-bottom: 10px;
+}
+
+.current-situation-div .result-row{
+    border-top: 1px solid #ccc;
 }

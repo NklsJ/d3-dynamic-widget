@@ -4,7 +4,6 @@ import 'rxjs/Rx';
 import { Widget } from '../widget';
 
 import { Event } from '../event';
-import { EventService } from '../services/event.service';
 
 import * as d3 from 'd3';
 
@@ -12,9 +11,7 @@ import * as d3 from 'd3';
     selector: 'app-widget',
     templateUrl: './widget.component.html',
     styleUrls: ['./widget.component.css'],
-    providers: [
-        EventService
-    ]
+    providers: []
 })
 export class WidgetComponent implements OnInit, AfterViewInit {
     @Input() widget: Widget;
@@ -25,8 +22,6 @@ export class WidgetComponent implements OnInit, AfterViewInit {
     public startPercent: number;
     public endPercent: number;
     public endPercentText: string;
-    public endQuantity: number;
-    public endQuantityText: string;
 
     public formatPercent: d3;
 
@@ -40,23 +35,11 @@ export class WidgetComponent implements OnInit, AfterViewInit {
     public step: number;
 
     public progress: number;
-    public over_target: boolean;
 
     public matchEvents: number;
-    public matchEventsArray: number[];
     public allEvents: number;
-    public targetPercent: number;
-    public targetPercentText: string;
 
-    public picker_s;
-    public picker_e;
-
-    public startDate: string;
-    public endDate: string;
-
-    constructor(
-        private eventService: EventService
-    ) {
+    constructor( ) {
         this.radius = 90;
         this.border = 18;
         this.padding = 1;
@@ -69,9 +52,7 @@ export class WidgetComponent implements OnInit, AfterViewInit {
         this.endPercent = 0.00;
 
         this.matchEvents = 0;
-        this.matchEventsArray = [];
         this.allEvents = 0;
-        this.targetPercent = 0;
     }
 
     ngOnInit() {
@@ -99,12 +80,6 @@ export class WidgetComponent implements OnInit, AfterViewInit {
         const component = this;
         const data = this.widget.events;
 
-        this.targetPercent = 0.50;
-        this.targetPercentText = '50%';
-
-        /**
-         * Loop through the events and see if current event is inside date range
-         */
         for (const key in data) {
             if (data.hasOwnProperty(key)) {
                 const current_data = data[key];
@@ -129,8 +104,6 @@ export class WidgetComponent implements OnInit, AfterViewInit {
     /**
      * After values are calculated we finally render the widget.
      * d3 magic happens here.
-     *
-     * @memberof WidgetComponent
      */
     renderGraph(): void {
         const boxSize = (this.radius + this.padding) * 2;

@@ -1,48 +1,39 @@
-<div id="progress-circle-graph" class="graph-element-div"></div>
-  
-<div class="current-situation-div">
-    <table>
-        <tr>
-            <td class="custom-tooltip-parent">
-                <span>Situation</span>
-            </td><td>
-                {{ matchEvents +" / "+ allEvents + " pcs." }}
-            </td><td>
-                {{ endPercentText }}
-            </td>
-        </tr>
-    </table>
-</div>
+<div class="widget-wrapper">
 
-<div class="target-situation-div">
-    <table>
-        <tr>
-            <td>
-                Target
-            </td><td>
-                &nbsp;
-            </td><td>
-                {{ targetPercentText }}
-            </td>
-        </tr>
-    </table>
-</div>
-
-<ng-container *ngIf="allEvents > 0">
-    <div class="status-div">
-        <div class="over-target" *ngIf="over_target">
-            <span class="status-indicator success"></span><p>Over target</p>
-        </div>
-        <div class="under-target" *ngIf="!over_target">
-            <span class="status-indicator warning"></span><p>Under target</p>
-        </div>
+    <div id="progress-circle-graph" class="graph-element-div"></div>
+      
+    <div class="current-situation-div">
+        <table>
+            <tr>
+                <td>
+                    <p>Values selected</p>
+                </td><td>
+                    <p>{{ matchEvents }}</p>
+                </td>
+            </tr>
+            <tr class="padding-row">
+                <td>
+                    <p>All events</p>
+                </td><td>
+                    <p>{{ allEvents }}</p>
+                </td>
+            </tr>
+            <tr class="result-row">
+                <td>
+                    <p>Result</p>
+                </td><td>
+                    <p>{{ endPercentText }}</p>
+                </td>
+            </tr>
+        </table>
     </div>
-</ng-container>
-
-<ng-container *ngIf="allEvents < 1">
-    <div class="status-div">
-        <div class="over-target">
-            <p class="no-indicator-p">No events found!</p>
+    
+    <ng-container *ngIf="allEvents < 1">
+        <div class="status-div">
+            <div class="over-target">
+                <p class="no-indicator-p">No events found!</p>
+            </div>
         </div>
-    </div>
-</ng-container>
+    </ng-container>
+    
+</div>
